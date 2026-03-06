@@ -1,47 +1,40 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Recommendations - Abbie Digel</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav-container">
-          <div class="logo">
-            <a href="/">Abbie Digel</a>
+---
+layout: base
+title: Book Recommendations
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Book Recommendations</h1>
+
+    {% for list in site.data.book_lists %}
+    <div class="book-list">
+      <h2>{{ list.title }}</h2>
+      {% if list.description %}<p>{{ list.description }}</p>{% endif %}
+
+      <div class="book-grid">
+        {% for book in list.books %}
+        <div class="book-card">
+          {% if book.coverImage %}
+          <img src="{{ book.coverImage }}" alt="Cover of {{ book.title }}" class="book-cover" />
+          {% endif %}
+          <div class="book-info">
+            <h3>{{ book.title }}</h3>
+            <p class="book-author">{{ book.author }}</p>
+            {% if book.ageRange %}<p class="book-age">Ages {{ book.ageRange }}</p>{% endif %}
+            {% if book.themes %}
+            <p class="book-themes">
+              {% for theme in book.themes %}<span class="tag">{{ theme }}</span>{% endfor %}
+            </p>
+            {% endif %}
+            <p>{{ book.description }}</p>
+            {% if book.libraryNote %}<p class="library-note">{{ book.libraryNote }}</p>{% endif %}
           </div>
-          <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="book-recommendations.html">Book Recommendations</a></li>
-            <li><a href="workshops.html">Workshops + Events</a></li>
-            <li><a href="newsletter.html">Newsletter</a></li>
-          </ul>
         </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="page-header">
-        <div class="container">
-          <h1>Book Recommendations</h1>
-          <p class="page-description">Coming soon...</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2026 Abbie Digel. All rights reserved.</p>
+        {% endfor %}
       </div>
-    </footer>
-  </body>
-</html>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>

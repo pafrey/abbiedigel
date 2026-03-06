@@ -1,7 +1,7 @@
 {
   "name": "abbiedigel",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "format": "prettier --write \"*.html\" \"*.css\"",
     "format:check": "prettier --check \"*.html\" \"*.css\"",
@@ -13,5 +13,9 @@
   "description": "",
   "devDependencies": {
     "prettier": "^3.8.0"
+  },
+  "dependencies": {
+    "@portabletext/to-html": "^5.0.2",
+    "@sanity/client": "^7.16.0"
   }
 }

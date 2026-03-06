@@ -1,0 +1,15 @@
+# _config.yml
+title: Abbie Digel
+description: Creative workshops, book recommendations, and thoughtful information design.
+url: "https://abbiedigel.com"
+
+exclude:
+  - node_modules/
+  - abbie-digel/
+  - scripts/
+  - plan.md
+  - "*.json"
+  - package.json
+  - package-lock.json
+  - CLAUDE.md
+  - README.md
