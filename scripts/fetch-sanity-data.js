@@ -106,7 +106,6 @@ async function fetchAll() {
     JSON.stringify({ upcoming: upcomingWorkshops, past: pastWorkshops }, null, 2),
   )
 
-  console.log('book_lists.json:', JSON.stringify(bookListsWithUrls))
   console.log('Sanity data written to _data/')
 }
 
