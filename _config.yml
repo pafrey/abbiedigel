@@ -8,7 +8,6 @@ exclude:
   - abbie-digel/
   - scripts/
   - plan.md
-  - "*.json"
   - package.json
   - package-lock.json
   - CLAUDE.md
