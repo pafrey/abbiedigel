@@ -26,22 +26,18 @@ function imageUrl(ref) {
 }
 
 async function fetchAll() {
-  const [homePage, aboutPage, bookLists, workshops] = await Promise.all([
+  const [homePage, aboutPage, books, workshops] = await Promise.all([
     client.fetch(`*[_type == "homePage"][0]{ ..., "heroImage": heroImage.asset._ref }`),
     client.fetch(`*[_type == "aboutPage"][0]`),
     client.fetch(`
-      *[_type == "bookList"] | order(order asc) {
+      *[_type == "book"] | order(title asc) {
         title,
-        description,
-        "books": books[]->{
-          title,
-          author,
-          ageRange,
-          themes,
-          description,
-          libraryNote,
-          "coverImage": coverImage.asset._ref
-        }
+        author,
+        ageRange,
+        themes,
+        moment,
+        whyILoveIt,
+        "coverImage": coverImage.asset._ref
       }
     `),
     client.fetch(`
@@ -68,13 +64,14 @@ async function fetchAll() {
   }))
 
   // Resolve cover image URLs
-  const bookListsWithUrls = bookLists.map((list) => ({
-    ...list,
-    books: (list.books || []).map((b) => ({
-      ...b,
-      coverImage: imageUrl(b.coverImage),
-    })),
+  const booksWithUrls = books.map((b) => ({
+    ...b,
+    coverImage: imageUrl(b.coverImage),
   }))
+
+  // Collect all unique themes and moments, sorted
+  const allThemes = [...new Set(booksWithUrls.flatMap((b) => b.themes ?? []))].sort()
+  const allMoments = [...new Set(booksWithUrls.flatMap((b) => b.moment ?? []))].sort()
 
   // Split workshops into upcoming and past
   const today = new Date().toISOString().slice(0, 10)
@@ -98,8 +95,16 @@ async function fetchAll() {
     JSON.stringify({ bioHtml: aboutHtml, headshot: imageUrl(aboutPage?.headshot?.asset?._ref) }, null, 2),
   )
   fs.writeFileSync(
-    path.join(dataDir, 'book_lists.json'),
-    JSON.stringify(bookListsWithUrls, null, 2),
+    path.join(dataDir, 'books.json'),
+    JSON.stringify(booksWithUrls, null, 2),
+  )
+  fs.writeFileSync(
+    path.join(dataDir, 'book_meta.json'),
+    JSON.stringify({
+      ageRanges: ['babies', 'toddlers', 'pre-school', 'K-2', '3-5'],
+      themes: allThemes,
+      moments: allMoments,
+    }, null, 2),
   )
   fs.writeFileSync(
     path.join(dataDir, 'workshops.json'),

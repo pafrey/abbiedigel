@@ -360,6 +360,125 @@ footer p {
   transform: translateY(0);
 }
 
+/* Book Recommendations */
+.book-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.book-filters label {
+  font-size: 0.875rem;
+  color: #717254;
+  font-weight: 500;
+}
+
+.book-filters select {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #cecdcd;
+  border-radius: 4px;
+  background: #f4f1ec;
+  color: #717254;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.book-count {
+  font-size: 0.875rem;
+  color: #717254;
+  margin-bottom: 1.5rem;
+}
+
+.book-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background-color: #ebdad2;
+  border: 1px solid #cecdcd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.book-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.book-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #717254;
+  margin-bottom: 0.25rem;
+}
+
+.book-author {
+  font-size: 0.875rem;
+  color: #717254;
+  margin-bottom: 0.5rem;
+}
+
+.book-age {
+  font-size: 0.8rem;
+  color: #717254;
+  margin-bottom: 0.5rem;
+}
+
+.book-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background-color: #f4f1ec;
+  border: 1px solid #cecdcd;
+  border-radius: 999px;
+  color: #717254;
+}
+
+.book-why {
+  font-size: 0.875rem;
+  color: #717254;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.worldcat-link {
+  display: inline-block;
+  margin-top: auto;
+  font-size: 0.875rem;
+  color: #717254;
+  text-decoration: underline;
+}
+
+.worldcat-link:hover {
+  color: #5a5a40;
+}
+
+.no-results {
+  color: #717254;
+  padding: 2rem 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-container {

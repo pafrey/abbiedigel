@@ -7,34 +7,105 @@ title: Book Recommendations
   <div class="container">
     <h1>Book Recommendations</h1>
 
-    {% for list in site.data.book_lists %}
-    <div class="book-list">
-      <h2>{{ list.title }}</h2>
-      {% if list.description %}<p>{{ list.description }}</p>{% endif %}
-
-      <div class="book-grid">
-        {% for book in list.books %}
-        <div class="book-card">
-          {% if book.coverImage %}
-          <img src="{{ book.coverImage }}" alt="Cover of {{ book.title }}" class="book-cover" />
-          {% endif %}
-          <div class="book-info">
-            <h3>{{ book.title }}</h3>
-            <p class="book-author">{{ book.author }}</p>
-            {% if book.ageRange %}<p class="book-age">Ages {{ book.ageRange }}</p>{% endif %}
-            {% if book.themes %}
-            <p class="book-themes">
-              {% for theme in book.themes %}<span class="tag">{{ theme }}</span>{% endfor %}
-            </p>
-            {% endif %}
-            <p>{{ book.description }}</p>
-            {% if book.libraryNote %}<p class="library-note">{{ book.libraryNote }}</p>{% endif %}
-          </div>
-        </div>
+    <div class="book-filters">
+      <label for="filter-age">Age range</label>
+      <select id="filter-age">
+        <option value="">All ages</option>
+        {% for age in site.data.book_meta.ageRanges %}
+        <option value="{{ age }}">{{ age }}</option>
         {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
+      </select>
 
+      <label for="filter-theme">Theme</label>
+      <select id="filter-theme">
+        <option value="">All themes</option>
+        {% for theme in site.data.book_meta.themes %}
+        <option value="{{ theme }}">{{ theme }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="filter-moment">Moment</label>
+      <select id="filter-moment">
+        <option value="">All moments</option>
+        {% for moment in site.data.book_meta.moments %}
+        <option value="{{ moment }}">{{ moment }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <p class="book-count" id="book-count"></p>
+
+    <div class="book-gallery" id="book-gallery">
+      {% for book in site.data.books %}
+      <div
+        class="book-card"
+        data-age="{{ book.ageRange }}"
+        data-themes="{{ book.themes | join: ',' }}"
+        data-moments="{{ book.moment | join: ',' }}"
+      >
+        {% if book.coverImage %}
+        <img src="{{ book.coverImage }}" alt="Cover of {{ book.title }}" class="book-cover" />
+        {% endif %}
+        <div class="book-info">
+          <h3>{{ book.title }}</h3>
+          <p class="book-author">by {{ book.author }}</p>
+          {% if book.ageRange %}<p class="book-age">{{ book.ageRange }}</p>{% endif %}
+          {% if book.themes %}
+          <p class="book-themes">
+            {% for theme in book.themes %}<span class="tag">{{ theme }}</span>{% endfor %}
+          </p>
+          {% endif %}
+          {% if book.whyILoveIt %}
+          <p class="book-why">{{ book.whyILoveIt }}</p>
+          {% endif %}
+          <a
+            href="https://search.worldcat.org/search?q={{ book.title | append: ' ' | append: book.author | url_encode }}"
+            class="worldcat-link"
+            target="_blank"
+            rel="noopener"
+          >Find in a library →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="no-results" id="no-results" style="display:none">
+      No books match those filters.
+    </p>
   </div>
 </section>
+
+<script>
+  (function () {
+    const ageSelect = document.getElementById('filter-age')
+    const themeSelect = document.getElementById('filter-theme')
+    const momentSelect = document.getElementById('filter-moment')
+    const cards = Array.from(document.querySelectorAll('.book-card'))
+    const countEl = document.getElementById('book-count')
+    const noResults = document.getElementById('no-results')
+
+    function update() {
+      const age = ageSelect.value
+      const theme = themeSelect.value
+      const moment = momentSelect.value
+      let visible = 0
+      cards.forEach((card) => {
+        const matchAge = !age || card.dataset.age === age
+        const themes = card.dataset.themes ? card.dataset.themes.split(',') : []
+        const matchTheme = !theme || themes.includes(theme)
+        const moments = card.dataset.moments ? card.dataset.moments.split(',') : []
+        const matchMoment = !moment || moments.includes(moment)
+        const show = matchAge && matchTheme && matchMoment
+        card.style.display = show ? '' : 'none'
+        if (show) visible++
+      })
+      countEl.textContent = `${visible} book${visible === 1 ? '' : 's'}`
+      noResults.style.display = visible === 0 ? '' : 'none'
+    }
+
+    ageSelect.addEventListener('change', update)
+    themeSelect.addEventListener('change', update)
+    momentSelect.addEventListener('change', update)
+    update()
+  })()
+</script>

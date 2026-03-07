@@ -32,3 +32,20 @@ This is a static personal website for Abbie Digel, deployed to GitHub Pages via 
 **Newsletter:** Embedded via Buttondown's embeddable form. Styles for `.embeddable-buttondown-form` are in `styles.css`.
 
 **No JavaScript, no framework, no build tooling** beyond Prettier for formatting.
+
+## Sanity Studio
+
+A Sanity Studio lives in `abbie-digel/` (separate Node project).
+
+- **Project ID:** `h0v4uijz`
+- **Dataset:** `production`
+- **Schema types:** `homePage`, `aboutPage`, `book`, `workshop` (defined in `abbie-digel/schemaTypes/`)
+
+```bash
+cd abbie-digel
+npm run dev      # start local Studio
+```
+
+**Schema deployment:** The Sanity CLI (`npx sanity schema deploy`) hangs due to an auth issue. Deploy schemas via the Claude Code MCP connection instead — just ask.
+
+Schema types go in `abbie-digel/schemaTypes/` and must be registered in `schemaTypes/index.ts`.
