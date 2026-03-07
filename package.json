@@ -5,6 +5,7 @@
   "scripts": {
     "format": "prettier --write \"*.html\" \"*.css\"",
     "format:check": "prettier --check \"*.html\" \"*.css\"",
+    "mock": "node scripts/use-mock-data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

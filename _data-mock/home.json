@@ -1,0 +1,24 @@
+{
+  "heroHeading": "Stories, workshops, and the books that change everything.",
+  "heroDescription": "Abbie Digel helps families find the right books at the right moment—and runs workshops that turn reading into conversation.",
+  "serviceCards": [
+    {
+      "heading": "Book Recommendations",
+      "body": "Curated picks for every age and mood, with notes on why each one matters.",
+      "linkLabel": "Browse the list",
+      "linkHref": "/book-recommendations.html"
+    },
+    {
+      "heading": "Workshops + Events",
+      "body": "Live sessions for parents, educators, and kids. Virtual and in-person.",
+      "linkLabel": "See upcoming events",
+      "linkHref": "/workshops.html"
+    },
+    {
+      "heading": "Newsletter",
+      "body": "A monthly letter with new picks, reading tips, and upcoming events.",
+      "linkLabel": "Subscribe",
+      "linkHref": "/newsletter.html"
+    }
+  ]
+}

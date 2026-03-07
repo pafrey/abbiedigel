@@ -1,0 +1,24 @@
+{
+  "upcoming": [
+    {
+      "name": "Reading Aloud with Intention",
+      "date": "2026-04-12",
+      "time": "10:00 AM – 11:30 AM",
+      "location": "Denver Public Library – Central Branch",
+      "descriptionHtml": "<p>A practical workshop on how to read aloud in ways that invite conversation—not just comprehension. We'll cover pacing, voice, and how to pause in the right places.</p>",
+      "price": "$20",
+      "registrationUrl": "https://example.com/register"
+    }
+  ],
+  "past": [
+    {
+      "name": "Books for Big Feelings",
+      "date": "2026-01-18",
+      "time": "2:00 PM – 3:30 PM",
+      "location": "Boulder Public Library",
+      "descriptionHtml": "<p>An exploration of picture books that help children name and navigate difficult emotions, with guidance on how to talk through them afterward.</p>",
+      "price": "Free",
+      "registrationUrl": null
+    }
+  ]
+}

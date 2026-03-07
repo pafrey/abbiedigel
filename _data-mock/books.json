@@ -1,0 +1,92 @@
+[
+  {
+    "title": "The Snowy Day",
+    "author": "Ezra Jack Keats",
+    "ageRange": "babies",
+    "themes": ["seasons", "wonder", "play"],
+    "moment": ["bedtime", "read-aloud"],
+    "whyILoveIt": "Pure sensory delight. The simplicity of a child walking through snow is captured so perfectly that babies and adults both go quiet.",
+    "coverImage": null
+  },
+  {
+    "title": "Goodnight Moon",
+    "author": "Margaret Wise Brown",
+    "ageRange": "babies",
+    "themes": ["bedtime", "comfort", "home"],
+    "moment": ["bedtime"],
+    "whyILoveIt": "The rhythm slows everything down. It's not just a book—it's a ritual.",
+    "coverImage": null
+  },
+  {
+    "title": "Where the Wild Things Are",
+    "author": "Maurice Sendak",
+    "ageRange": "toddlers",
+    "themes": ["imagination", "feelings", "home"],
+    "moment": ["read-aloud", "discussion"],
+    "whyILoveIt": "Max's journey through big feelings and back to safety is one of the most emotionally complete stories ever told for young children.",
+    "coverImage": null
+  },
+  {
+    "title": "Corduroy",
+    "author": "Don Freeman",
+    "ageRange": "toddlers",
+    "themes": ["friendship", "belonging", "home"],
+    "moment": ["bedtime", "read-aloud"],
+    "whyILoveIt": "A gentle story about wanting to belong. Kids feel Corduroy's longing viscerally, and the ending never gets old.",
+    "coverImage": null
+  },
+  {
+    "title": "Frog and Toad Are Friends",
+    "author": "Arnold Lobel",
+    "ageRange": "pre-school",
+    "themes": ["friendship", "kindness", "humor"],
+    "moment": ["read-aloud", "discussion"],
+    "whyILoveIt": "These two are the best friend pair in all of children's literature. Every story is a small lesson in what it means to care for someone.",
+    "coverImage": null
+  },
+  {
+    "title": "The Very Hungry Caterpillar",
+    "author": "Eric Carle",
+    "ageRange": "pre-school",
+    "themes": ["nature", "growth", "counting"],
+    "moment": ["read-aloud"],
+    "whyILoveIt": "The die-cut pages make reading feel interactive. Kids love counting the foods long before they know they're learning.",
+    "coverImage": null
+  },
+  {
+    "title": "Charlotte's Web",
+    "author": "E.B. White",
+    "ageRange": "K-2",
+    "themes": ["friendship", "loss", "nature"],
+    "moment": ["read-aloud", "discussion"],
+    "whyILoveIt": "The first book that made me cry. Charlotte's sacrifice is handled with such honesty—it gives kids language for grief without softening it.",
+    "coverImage": null
+  },
+  {
+    "title": "Pippi Longstocking",
+    "author": "Astrid Lindgren",
+    "ageRange": "K-2",
+    "themes": ["independence", "humor", "adventure"],
+    "moment": ["read-aloud"],
+    "whyILoveIt": "Pippi is the antidote to every book where children are told to be small. She's chaotic and joyful and completely her own person.",
+    "coverImage": null
+  },
+  {
+    "title": "A Wrinkle in Time",
+    "author": "Madeleine L'Engle",
+    "ageRange": "3-5",
+    "themes": ["adventure", "courage", "science"],
+    "moment": ["read-aloud", "discussion"],
+    "whyILoveIt": "One of the few books that takes a girl's intellectual curiosity seriously and makes the universe feel both vast and personal.",
+    "coverImage": null
+  },
+  {
+    "title": "The Phantom Tollbooth",
+    "author": "Norton Juster",
+    "ageRange": "3-5",
+    "themes": ["imagination", "curiosity", "wordplay"],
+    "moment": ["read-aloud", "discussion"],
+    "whyILoveIt": "Every chapter is a pun that becomes a world. This book made me fall in love with language as a child and I've never recovered.",
+    "coverImage": null
+  }
+]

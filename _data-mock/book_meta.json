@@ -1,0 +1,28 @@
+{
+  "ageRanges": ["babies", "toddlers", "pre-school", "K-2", "3-5"],
+  "themes": [
+    "adventure",
+    "bedtime",
+    "belonging",
+    "comfort",
+    "courage",
+    "counting",
+    "curiosity",
+    "feelings",
+    "friendship",
+    "growth",
+    "home",
+    "humor",
+    "imagination",
+    "independence",
+    "kindness",
+    "loss",
+    "nature",
+    "play",
+    "science",
+    "seasons",
+    "wonder",
+    "wordplay"
+  ],
+  "moments": ["bedtime", "discussion", "read-aloud"]
+}
