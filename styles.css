@@ -294,6 +294,17 @@ header {
   letter-spacing: -0.05em;
 }
 
+.bio {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  line-height: 1.7;
+}
+
+.bio p {
+  margin-bottom: 1rem;
+}
+
 .page-description {
   font-size: 1.125rem;
   color: #717254;
