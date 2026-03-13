@@ -296,7 +296,6 @@ header {
 
 .bio {
   overflow-wrap: break-word;
-  word-break: break-word;
   max-width: 100%;
   line-height: 1.7;
 }
