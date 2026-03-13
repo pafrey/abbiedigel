@@ -107,6 +107,13 @@ header {
   align-items: center;
 }
 
+.headshot {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
 .hero-img {
   width: 100%;
   max-width: 400px;
