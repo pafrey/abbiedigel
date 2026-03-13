@@ -113,8 +113,7 @@ header {
 }
 
 .headshot {
-  width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 100%);
   height: auto;
   display: block;
 }
