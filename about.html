@@ -7,10 +7,12 @@ title: About
   <div class="container">
     <h1>About</h1>
     {% if site.data.about.headshot %}
-    <img src="{{ site.data.about.headshot }}" alt="Abbie Digel" class="headshot" />
+    <img
+      src="{{ site.data.about.headshot }}"
+      alt="Abbie Digel"
+      class="headshot"
+    />
     {% endif %}
-    <div class="bio">
-      {{ site.data.about.bioHtml }}
-    </div>
+    <div class="bio">{{ site.data.about.bioHtml }}</div>
   </div>
 </section>

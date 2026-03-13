@@ -67,7 +67,16 @@ header {
 }
 
 .nav-links a:hover {
-  color: #717254;
+  color: #5a5a40;
+}
+
+/* Hide toggle mechanism on desktop */
+.nav-toggle {
+  display: none;
+}
+
+.nav-hamburger {
+  display: none;
 }
 
 /* Hero Section */
@@ -324,7 +333,9 @@ footer p {
   font-size: 1rem;
   font-family: inherit;
   margin-bottom: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .embeddable-buttondown-form input[type="email"]:focus {
@@ -347,7 +358,9 @@ footer p {
   font-weight: 400;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
   width: 100%;
 }
 
@@ -481,15 +494,70 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Nav: hamburger layout */
   .nav-container {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem 2rem;
-    gap: 1rem;
+    flex-wrap: wrap;
+    height: 3.5rem;
+    padding: 0 1.25rem;
+    gap: 0;
   }
 
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.5rem;
+    height: 1.125rem;
+    cursor: pointer;
+    margin: auto 0;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    height: 2px;
+    background-color: #717254;
+    border-radius: 2px;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  /* Hide links by default on mobile */
   .nav-links {
-    gap: 1.5rem;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+    border-top: 1px solid #cecdcd;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+
+  /* Show links when checkbox is checked */
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Animate hamburger to X when open */
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
   }
 
   .hero-content {
@@ -530,10 +598,6 @@ footer p {
 @media (max-width: 480px) {
   .container {
     padding: 0 1rem;
-  }
-
-  .nav-container {
-    padding: 1rem;
   }
 
   .hero {

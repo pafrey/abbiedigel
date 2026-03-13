@@ -11,7 +11,11 @@ title: Home
         <p class="hero-description">{{ site.data.home.heroDescription }}</p>
       </div>
       <div class="hero-image">
-        <img src="{% if site.data.home.heroImage %}{{ site.data.home.heroImage }}{% else %}/media/abbie-hero.jpg{% endif %}" alt="Abbie Digel" class="hero-img" />
+        <img
+          src="{% if site.data.home.heroImage %}{{ site.data.home.heroImage }}{% else %}/media/abbie-hero.jpg{% endif %}"
+          alt="Abbie Digel"
+          class="hero-img"
+        />
       </div>
     </div>
 
@@ -21,7 +25,11 @@ title: Home
         <h3>{{ card.heading }}</h3>
         <p>{{ card.body }}</p>
         {% if card.linkHref %}
-        <a href="{{ card.linkHref }}" class="service-link" style="display:block;margin-top:1rem">
+        <a
+          href="{{ card.linkHref }}"
+          class="service-link"
+          style="display: block; margin-top: 1rem"
+        >
           &rarr; {{ card.linkLabel }}
         </a>
         {% endif %}
