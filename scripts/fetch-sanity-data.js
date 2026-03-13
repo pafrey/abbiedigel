@@ -53,6 +53,10 @@ async function fetchAll() {
     `),
   ])
 
+  // Debug: log what Sanity returned
+  console.log('homePage:', JSON.stringify(homePage, null, 2))
+  console.log('aboutPage keys:', aboutPage ? Object.keys(aboutPage) : null)
+
   // Resolve portable text to HTML for fields that use it
   const aboutHtml = aboutPage?.bio
     ? toHTML(aboutPage.bio)
