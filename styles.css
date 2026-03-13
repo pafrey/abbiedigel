@@ -494,12 +494,14 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  /* Nav: hamburger layout */
+  /* Nav: hamburger layout — header stays fixed height, links drop as overlay */
+  header {
+    position: relative;
+  }
+
   .nav-container {
-    flex-wrap: wrap;
     height: 3.5rem;
     padding: 0 1.25rem;
-    gap: 0;
   }
 
   .nav-hamburger {
@@ -526,10 +528,15 @@ footer p {
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f4f1ec;
+    border-bottom: 1px solid #cecdcd;
     gap: 0;
-    padding: 0.5rem 0 1rem;
-    border-top: 1px solid #cecdcd;
+    padding: 0.5rem 1.25rem 1rem;
+    z-index: 99;
   }
 
   .nav-links li {
